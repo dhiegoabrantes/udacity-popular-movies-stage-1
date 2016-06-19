@@ -13,7 +13,7 @@ public class TheMovieDBUtils {
     public static final String TMDB_IMAGE_BASE_UTL = "http://image.tmdb.org/t/p/";
     public static final String TMDB_IMAGE_SIZE = "w185";
 
-    public static final String API_KEY = "13034cc828e0ddacdb023210d56f8d50";
+    public static final String API_KEY = "YOUR_API_KEY";
 
 
     public static String buildUrl(String imageFileName){

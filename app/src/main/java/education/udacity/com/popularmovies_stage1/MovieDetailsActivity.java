@@ -23,13 +23,11 @@ public class MovieDetailsActivity extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         if(bundle != null) {
             this.movie = (Movie) bundle.getParcelable(Movie.PARCELABLE_KEY);
-
             fillFields();
         }
     }
 
     private void fillFields() {
-
         ImageView imageView = (ImageView) findViewById(R.id.imageViewMovie);
         Picasso.with(MovieDetailsActivity.this).load(TheMovieDBUtils.buildUrl(movie.getPosterPath())).into(imageView);
 
@@ -44,7 +42,5 @@ public class MovieDetailsActivity extends AppCompatActivity {
 
         TextView rating = (TextView) findViewById(R.id.textViewMovieRating);
         rating.setText( this.movie.getRating() );
-
-
     }
 }

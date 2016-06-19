@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Popular Movies - Stage 1</string>
+
+    <string name="label_sorting_by_top_rated_movies">Sorting by: Top Rated</string>
+    <string name="label_sorting_by_popular_movies">Sorting by: Most Popular</string>
+
+    <string name="label_top_rated_movies">Top Rated</string>
+    <string name="label_popular_movies">Most Popular</string>
+
+    <string name="label_movie_title">Title</string>
+    <string name="label_movie_overview">Overview</string>
+    <string name="label_movie_release_date">Release Date</string>
+    <string name="label_movie_rating">Rating</string>
+
 </resources>

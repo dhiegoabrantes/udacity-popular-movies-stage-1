@@ -14,7 +14,7 @@
         android:layout_margin="10dp"
         android:textSize="18sp"/>
 
-    <GridView xmlns:android="http://schemas.android.com/apk/res/android"
+    <GridView
         android:id="@+id/gridViewMovies"
         android:numColumns="2"
         android:gravity="center"

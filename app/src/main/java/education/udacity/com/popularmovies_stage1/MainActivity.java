@@ -89,8 +89,13 @@ public class MainActivity extends AppCompatActivity implements AsyncTaskDelegate
 
     @Override
     public void processFinish(Object output) {
-        List<Movie> movies = (List<Movie>) output;
-        gridView = (GridView) findViewById(R.id. gridViewMovies);
-        gridView.setAdapter(new MovieAdapter(this, movies));
+        if(output != null){
+            List<Movie> movies = (List<Movie>) output;
+            gridView = (GridView) findViewById(R.id. gridViewMovies);
+            gridView.setAdapter(new MovieAdapter(this, movies));
+        }else{
+            Toast.makeText(this, R.string.connection_error, Toast.LENGTH_LONG).show();
+        }
+
     }
 }

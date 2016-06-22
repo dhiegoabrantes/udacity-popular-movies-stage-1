@@ -12,4 +12,6 @@
     <string name="label_movie_release_date">Release Date</string>
     <string name="label_movie_rating">Rating</string>
 
+    <string name="connection_error">No internet available. Please try again!</string>
+
 </resources>

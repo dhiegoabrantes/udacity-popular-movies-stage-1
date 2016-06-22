@@ -11,6 +11,7 @@ import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import education.udacity.com.popularmovies_stage1.MovieDetailsActivity;
@@ -28,7 +29,7 @@ public class MovieAdapter extends BaseAdapter {
 
     public MovieAdapter(Context context, List<Movie> movies) {
         this.context = context;
-        this.movies = movies;
+        this.movies = movies != null ? movies : new ArrayList<Movie>();
     }
 
     @Override
@@ -37,7 +38,7 @@ public class MovieAdapter extends BaseAdapter {
     }
 
     @Override
-    public Object getItem(int i) {
+    public Movie getItem(int i) {
         return movies.get(i);
     }
 
@@ -50,10 +51,13 @@ public class MovieAdapter extends BaseAdapter {
     public View getView(int i, View view, final ViewGroup viewGroup) {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        View gridViewItem = inflater.inflate(R.layout.movie_item, null);
+        View gridViewItem = view;
+        if( gridViewItem == null) {
+            inflater.inflate(R.layout.movie_item, null);
+        }
         ImageView imageView = (ImageView) gridViewItem.findViewById(R.id.grid_item_image);
 
-        final Movie movie = movies.get(i);
+        final Movie movie = getItem(i);
         String path = movie.getPosterPath();
         Picasso.with(context).load(TheMovieDBUtils.buildUrl(movie.getPosterPath())).into(imageView);
 

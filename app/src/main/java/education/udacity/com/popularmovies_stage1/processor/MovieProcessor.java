@@ -15,9 +15,9 @@ import education.udacity.com.popularmovies_stage1.domain.Movie;
 public class MovieProcessor {
 
     public static List<Movie> process(String input) {
-        List<Movie> movies = null;
+        List<Movie> movies = new ArrayList<Movie>();
         try {
-            if(input.startsWith("{")){
+            if(input != null && input.startsWith("{")){
                 JSONObject parentObject = new JSONObject(input);
                 JSONArray jsonArray = (JSONArray) parentObject.get("results");
 
